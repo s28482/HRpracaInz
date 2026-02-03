@@ -1,0 +1,6 @@
+@HRpraca_HostAddress = http://localhost:5159
+
+GET {{HRpraca_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
