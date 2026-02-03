@@ -1,0 +1,83 @@
+####################################
+# .NET / ASP.NET Core
+####################################
+bin/
+obj/
+out/
+
+####################################
+# Visual Studio
+####################################
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+####################################
+# Rider / IntelliJ / DataGrip
+####################################
+.idea/
+*.iml
+*.iws
+
+####################################
+# Build & publish
+####################################
+publish/
+artifacts/
+
+####################################
+# Logs
+####################################
+logs/
+*.log
+
+####################################
+# ASP.NET Core configuration
+# (sekrety, connection stringi, JWT)
+####################################
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+
+# jeśli chcesz zostawić template:
+# appsettings.json -> W REPO
+# appsettings.*.json -> NIE
+
+####################################
+# User Secrets
+####################################
+**/secrets.json
+**/usersecrets.json
+
+####################################
+# Environment files
+####################################
+.env
+.env.*
+
+####################################
+# SQL / Database (jeśli kiedyś lokalne pliki)
+####################################
+*.mdf
+*.ldf
+
+####################################
+# Test results
+####################################
+TestResults/
+*.trx
+
+####################################
+# OS
+####################################
+.DS_Store
+Thumbs.db
+
+####################################
+# Misc
+####################################
+*.tmp
+*.bak
+*.swp
