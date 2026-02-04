@@ -3,6 +3,7 @@ using HRpraca.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRpraca.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260204224432_SeedAdminOnly")]
+    partial class SeedAdminOnly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,6 +42,13 @@ namespace HRpraca.Migrations
                     b.HasKey("RoleId");
 
                     b.ToTable("Role", "WMS");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("HRpraca.Models.User", b =>
@@ -84,6 +94,18 @@ namespace HRpraca.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("User", "WMS");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Email = "admin@wms.local",
+                            FirstName = "System",
+                            IsActive = true,
+                            LastName = "Administrator",
+                            PasswordHash = "$2a$11$1InRDSTNIMUJZXTBdGaM6uBwJtIb3wRSGywJak6t7eX.DG0O8sPl2",
+                            RoleId = 1
+                        });
                 });
 
             modelBuilder.Entity("HRpraca.Models.User", b =>

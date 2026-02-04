@@ -35,5 +35,30 @@ public class AppDbContext : DbContext
             .HasIndex(u => u.Email)
             .IsUnique()
             .HasDatabaseName("UX_User_Email");
+        
+        
+        // Seed: Role
+        modelBuilder.Entity<Role>().HasData(
+            new Role
+            {
+                RoleId = 1,
+                Name = "Admin"
+            }
+        );
+        
+        // Seed: User (Admin)
+        modelBuilder.Entity<User>().HasData(
+            new User
+            {
+                UserId = 1,
+                FirstName = "System",
+                LastName = "Administrator",
+                Email = "admin@wms.local",
+                PasswordHash = "$2a$11$1InRDSTNIMUJZXTBdGaM6uBwJtIb3wRSGywJak6t7eX.DG0O8sPl2",
+                IsActive = true,
+                RoleId = 1
+            }
+        );
     }
 }
+
